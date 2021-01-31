@@ -32,7 +32,7 @@ export const UserFragment = gql`
 
 const Profile: React.FC<ProfileProps> = ({ user }) => {
   return (
-    <div className='profile'>
+    <div className='profile w-full h-full'>
       <div className='avatar ring-4 ring-gray-500 ring-offset-2 rounded-3xl'>
         <img className='rounded-3xl w-full' src={user?.avatarUrl} />
       </div>

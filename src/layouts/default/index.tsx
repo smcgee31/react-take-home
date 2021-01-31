@@ -9,11 +9,17 @@ const DefaultLayout: React.FC<Props> = ({ children, className }) => {
     <div
       className={`h-full grid grid-rows-layout auto-rows-max gap-4 default-layout ${className}`}
     >
-      <header className=''>hi</header>
-      <main className='h-full'>
-        <div className='container mx-auto h-full'>{children}</div>
+      <header className='p-4 text-2xl bg-white dark:bg-gray-700 shadow-md'>
+        <div className='container mx-auto'>Hello!</div>
+      </header>
+      <main>
+        <div className='container mx-auto h-full mt-8'>{children}</div>
       </main>
-      <footer className=''>footer</footer>
+      <footer className='p-8 bg-gray-300 dark:bg-gray-900'>
+        <div className='container mx-auto flex flex-column items-center h-full'>
+          GuideCX Frontend Assessment
+        </div>
+      </footer>
     </div>
   );
 };

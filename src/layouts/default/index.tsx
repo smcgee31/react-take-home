@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   className?: string;
@@ -10,7 +11,10 @@ const DefaultLayout: React.FC<Props> = ({ children, className }) => {
       className={`h-full grid grid-rows-layout auto-rows-max gap-4 default-layout ${className}`}
     >
       <header className='p-4 text-2xl bg-white dark:bg-gray-700 shadow-md'>
-        <div className='container mx-auto'>Hello!</div>
+        <div className='container mx-auto space-x-10'>
+          <Link to='/'>Hello!</Link>
+          <Link to='/magic'>Magic</Link>
+        </div>
       </header>
       <main>
         <div className='container mx-auto h-full mt-8'>{children}</div>

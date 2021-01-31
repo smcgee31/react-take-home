@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './index';
+import { render } from '@testing-library/react';
+import { MockedProvider } from '@apollo/client/testing';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from './index';
+import { BrowserRouter } from 'react-router-dom';
+
+test('renders', () => {
+  const { container } = render(
+    <MockedProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MockedProvider>
+  );
+  expect(container).toBeInTheDocument();
 });

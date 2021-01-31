@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import {
   ApolloClient,
@@ -11,14 +12,12 @@ import {
 import 'tailwindcss/tailwind.css';
 import './root.scss';
 
-import App from './containers/app';
 import reportWebVitals from './reportWebVitals';
+import Routes from './routes';
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
 });
-
-console.log('token', process.env);
 
 const authLink = setContext((_, { headers }) => {
   const token = process.env.REACT_APP_GITHUB_ACCESS_KEY;
@@ -38,7 +37,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <Router>
+        <Routes />
+      </Router>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

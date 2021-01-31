@@ -1,22 +1,29 @@
+import { gql, useQuery } from '@apollo/client';
+
 import './app.scss';
+import DefaultLayout from '../../layouts/default';
+import Profile, { UserFragment } from '../../components/profile';
+
+const CURRENT_USER = gql`
+  query CurrentUser {
+    viewer {
+      id
+      ...Profile_UserFragment
+    }
+  }
+
+  ${UserFragment}
+`;
 
 function App() {
+  const { loading, data } = useQuery(CURRENT_USER);
+
   return (
-    <div className='app'>
-      <header className='app-header'>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='app-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DefaultLayout className='app-container'>
+      <div className='h-full flex flex-row'>
+        <Profile user={data?.viewer} />
+      </div>
+    </DefaultLayout>
   );
 }
 

@@ -35,12 +35,12 @@ const UserRepos: React.FC<Props> = ({ repos = [] }) => {
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className='flex flex-col justify-center p-2 border rounded border-gray-700'
+            className='flex flex-col justify-center p-4 px-8 border rounded border-gray-700'
           >
-            <a className='text-2xl leading-loose' href={repo.url}>
+            <a className='text-2xl' href={repo.url}>
               {repo.name}
             </a>
-            <div className='space-x-2 text-thin'>
+            <div className='space-x-2 text-thin italic'>
               <span>Stars: {repo.stargazerCount}</span>
               <span>Updated: {new Date(repo.updatedAt).toDateString()}</span>
             </div>

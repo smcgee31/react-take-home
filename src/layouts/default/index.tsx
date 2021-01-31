@@ -12,7 +12,7 @@ const DefaultLayout: React.FC<Props> = ({ children, className }) => {
     >
       <header className='p-4 text-2xl bg-white dark:bg-gray-700 shadow-md'>
         <div className='container mx-auto space-x-10'>
-          <Link to='/'>Hello!</Link>
+          <Link to='/'>Profile</Link>
           <Link to='/magic'>Magic</Link>
         </div>
       </header>

@@ -40,3 +40,17 @@ read:gpg_key
 - **Explore the Github GraphQL API**: If you're new to the Github GraphQL API, you may consider spending a few minutes exploring the public schema to get an idea of what data is available. See [Github GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer).
 
 ## Problem
+
+You've got access to a lot of Github data. There's a placeholder component at [./src/containers/magic](./src/containers/magic) where you're free to build whatever you'd like, leveraging GraphQL Queries and/or Mutations on the Github GraphQL API.
+
+Some examples:
+
+- Search
+- Analyzer
+- Vulnerability Checker
+
+Here are some ground rules:
+
+- [ ] must have at least one query
+- [ ] don't spend any longer than 4 hours
+- [ ] use whatever UI or styling approaches you're comfortable with. This repo has been setup with `scss` and tailwindcss

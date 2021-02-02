@@ -1,4 +1,3 @@
-import React from 'react';
 import { gql } from '@apollo/client';
 
 interface ProfileProps {
@@ -34,7 +33,11 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
   return (
     <div className='profile w-full h-full'>
       <div className='avatar ring-4 ring-gray-500 ring-offset-2 rounded-3xl'>
-        <img className='rounded-3xl w-full' src={user?.avatarUrl} />
+        <img
+          className='rounded-3xl w-full'
+          src={user?.avatarUrl}
+          alt='user profile'
+        />
       </div>
       <h1 className='pt-2 text-2xl'>{user?.name}</h1>
       <h2 className='font-thin text-xl leading-loose'>{user?.username}</h2>

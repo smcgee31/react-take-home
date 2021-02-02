@@ -29,7 +29,7 @@ function App() {
   return (
     <DefaultLayout className='app-container'>
       <div className='h-full flex flex-row'>
-        <div className='w-1/4'>
+        <div className='pt-3 w-1/4'>
           <Profile user={data?.viewer} />
         </div>
         <UserRepos repos={data?.viewer?.repositories?.nodes || []} />

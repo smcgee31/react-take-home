@@ -1,4 +1,4 @@
-# GuideCX: Frontend
+# GuideCX: Frontend Assessment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -23,19 +23,19 @@ npm install
 cp .env.example .env
 ```
 
-- [Create a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and save it to your `.env` file. The scopes you require depends on the type of data you're wanting to fetch. The following list is a good start:
+- [Create a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and save it to your `.env` file. The scopes you require depends on the type of data you're wanting to fetch. The following configuration is a good start:
 
 ```
-user
-public_repo
-repo
-repo_deployment
-repo:status
-read:repo_hook
-read:org
-read:public_key
-read:gpg_key
+  - repo
+    - repo_deployment
+    - public_repo
+  - user
+    - read:user
+    - user:email
 ```
+
+![](https://i.imgur.com/8TUUi0D.jpg)
+
 
 - **Explore the Github GraphQL API**: If you're new to the Github GraphQL API, you may consider spending a few minutes exploring the public schema to get an idea of what data is available. See [Github GraphQL Explorer](https://docs.github.com/en/graphql/overview/explorer).
 
@@ -45,9 +45,10 @@ You've got access to a lot of Github data. There's a placeholder component at [.
 
 Some examples:
 
-- Search
-- Analyzer
-- Vulnerability Checker
+- Search Repos
+- List which repos have been forked by your followers
+- Compare analytics between multiple repos
+- List all vulnerabilities of selected repos, filter by vulnerability type
 
 Here are some ground rules:
 

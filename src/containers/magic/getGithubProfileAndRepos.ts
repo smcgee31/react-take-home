@@ -9,7 +9,6 @@ const getGithubProfileAndRepos = gql`
       bio
       createdAt
       name
-      twitterUsername
       websiteUrl
       repositories(first: 8) {
         totalCount

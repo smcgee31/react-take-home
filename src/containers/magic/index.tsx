@@ -6,15 +6,15 @@ import Search from './Search';
 const Magic: React.FC = () => {
   const [person, setPerson] = useState('');
 
-  const handleClickImage = (name: string) => {
+  const handleClick = (name: string) => {
     return setPerson(name);
   };
 
   return (
     <div className="magic flex-col p-8">
       <div className="max-w-5xl mx-auto">
-        <Search handleClick={handleClickImage} />
-        <Favorites handleClick={handleClickImage} />
+        <Search handleClick={handleClick} />
+        <Favorites handleClick={handleClick} />
         <Display person={person} />
       </div>
     </div>
